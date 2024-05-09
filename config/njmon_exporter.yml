@@ -1,0 +1,22 @@
+# njmon_exporter.yml
+
+njmon:
+  address: 127.0.0.1
+  port: 8086
+exporter:
+  address: 127.0.0.1
+  port: 9772
+logging:
+  journal: no
+  level: trace
+thresholds:
+  # After how many seconds should a host be considered dead
+  alive_timeout: 300
+  # Terminate an incoming connection after n seconds
+  connection_timeout: 10
+instance_label:
+  label_name: env
+  label_hit: prod
+  label_miss: dev
+  hit_instances:
+    - myprodhostname
